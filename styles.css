@@ -199,6 +199,42 @@ h1 em{font-style:normal;display:block;color:var(--gold);font-variation-settings:
 .arabic-note p{margin:0;font-family:var(--display);font-size:clamp(1.1rem,1rem + .5vw,1.35rem);line-height:1.4;font-variation-settings:"opsz" 60,"WONK" 1;font-style:italic}
 .arabic-note .attrib{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-top:.85rem;font-style:normal}
 
+/* ---------- research paper ---------- */
+.paper-card{
+  border:1px solid var(--rule);background:var(--void-2);border-radius:2px;
+  padding:clamp(1.5rem,4vw,2.25rem);margin-top:2.5rem;
+  display:grid;gap:clamp(1.5rem,4vw,2.5rem);grid-template-columns:1fr;
+}
+@media (min-width:52rem){.paper-card{grid-template-columns:1fr 1.15fr;align-items:center}}
+
+.paper-meta .tag{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--void);background:var(--gold);padding:.2rem .5rem;border-radius:2px;display:inline-block;margin-bottom:1rem;
+}
+.paper-meta h3{
+  font-family:var(--display);font-size:clamp(1.3rem,1.1rem + 1vw,1.85rem);line-height:1.12;
+  font-variation-settings:"opsz" 60,"WONK" 1;font-weight:500;margin-bottom:.6rem;
+}
+.paper-meta .paper-sub{font-size:.96rem;color:var(--ink-dim);line-height:1.55;margin-bottom:1.4rem;max-width:44ch}
+.paper-detail{display:grid;gap:.5rem;margin-bottom:1.6rem}
+.paper-detail div{display:flex;gap:.8rem;font-size:.86rem;align-items:baseline}
+.paper-detail dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);flex:none;width:8.5rem}
+.paper-detail dd{margin:0;color:var(--ink)}
+
+.paper-preview{position:relative;border:1px solid var(--rule);border-radius:2px;overflow:hidden;background:var(--void-3)}
+.paper-preview iframe{width:100%;height:clamp(320px,50vh,480px);border:0;display:block}
+/* on small screens, swap the heavy embed for a lighter prompt */
+.paper-preview .paper-fallback{display:none}
+@media (max-width:51.99rem){
+  .paper-preview iframe{display:none}
+  .paper-preview .paper-fallback{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;
+    padding:2.5rem 1.5rem;text-align:center;color:var(--ink-faint);
+  }
+  .paper-preview .paper-fallback svg{width:2.5rem;height:2.5rem;opacity:.5}
+  .paper-preview .paper-fallback span{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}
+}
+
 /* ---------- resources page ---------- */
 .res-intro{max-width:var(--measure)}
 
