@@ -199,7 +199,45 @@ h1 em{font-style:normal;display:block;color:var(--gold);font-variation-settings:
 .arabic-note p{margin:0;font-family:var(--display);font-size:clamp(1.1rem,1rem + .5vw,1.35rem);line-height:1.4;font-variation-settings:"opsz" 60,"WONK" 1;font-style:italic}
 .arabic-note .attrib{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-top:.85rem;font-style:normal}
 
-/* ---------- elements ---------- */
+/* ---------- manuscript / original document ---------- */
+.manuscript-fig{margin:2.5rem 0 0}
+.manuscript-plate{
+  border:1px solid var(--rule);
+  background:#e9e0cf;              /* parchment mount so the aged paper sits naturally */
+  padding:clamp(.6rem,2vw,1.1rem);
+  border-radius:2px;
+  overflow:hidden;
+}
+.manuscript-plate img{width:100%;height:auto;display:block;border-radius:1px}
+.fig-cap{
+  margin-top:.9rem;font-size:.88rem;line-height:1.5;color:var(--ink-dim);
+  display:flex;gap:.75rem;align-items:baseline;
+}
+.fig-cap .tag{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--void);background:var(--gold);padding:.2rem .5rem;border-radius:2px;white-space:nowrap;flex:none;
+}
+
+.doc-pair{display:grid;gap:clamp(1.5rem,4vw,2.5rem);grid-template-columns:1fr;margin-top:clamp(1.5rem,4vw,2.5rem)}
+@media (min-width:56rem){.doc-pair{grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:start}}
+
+.transcript-card{border:1px solid var(--rule);background:var(--void-2);padding:clamp(1.25rem,3vw,1.75rem);border-radius:2px}
+.transcript-card .fig-cap{margin-top:0;margin-bottom:1.1rem}
+.transcript-rows{display:grid;gap:.55rem}
+.transcript-rows .tr-row{
+  font-family:var(--mono);font-size:clamp(.82rem,.7rem + .6vw,1.02rem);
+  color:var(--ink);letter-spacing:.02em;line-height:1.5;word-spacing:.1em;
+  padding:.5rem .7rem;background:var(--void);border-left:2px solid var(--c);border-radius:1px;
+}
+.transcript-rows .tr-row b{color:var(--c);font-weight:600}
+
+.seal-card{border:1px solid var(--rule);background:var(--void-2);padding:clamp(1.25rem,3vw,1.75rem);border-radius:2px;text-align:center}
+.seal-card .seal-img{
+  width:min(220px,70%);margin:0 auto 1rem;
+  filter:none;
+}
+.seal-card .fig-cap{justify-content:center;text-align:center;margin-top:0}
+.seal-card p{font-size:.9rem;color:var(--ink-dim);margin:.4rem 0 0}
 .el-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(9.5rem,1fr));gap:.55rem;margin:2.5rem 0 1.75rem;padding:0;list-style:none}
 .el-card{border:1px solid var(--rule);background:var(--void-2);padding:.85rem .9rem;position:relative;overflow:hidden;transition:background .3s ease,border-color .3s ease}
 .el-card:hover{background:var(--void-3);border-color:var(--c)}
